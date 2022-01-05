@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Landentabel", "Landentabel\Landentabel.csproj", "{80C32752-089A-4397-AAB0-78A4CFE9C9B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "LandelijkeTabellen.Tests\Tests.csproj", "{72520CDA-D59D-4142-9CDC-F6DEA655BA20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{44D830B9-C727-4C04-8F87-778212093D96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80C32752-089A-4397-AAB0-78A4CFE9C9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C32752-089A-4397-AAB0-78A4CFE9C9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C32752-089A-4397-AAB0-78A4CFE9C9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C32752-089A-4397-AAB0-78A4CFE9C9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72520CDA-D59D-4142-9CDC-F6DEA655BA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72520CDA-D59D-4142-9CDC-F6DEA655BA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72520CDA-D59D-4142-9CDC-F6DEA655BA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72520CDA-D59D-4142-9CDC-F6DEA655BA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D830B9-C727-4C04-8F87-778212093D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D830B9-C727-4C04-8F87-778212093D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D830B9-C727-4C04-8F87-778212093D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D830B9-C727-4C04-8F87-778212093D96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81ABF264-F1F1-49E0-BF90-36D8020A26E3}
+	EndGlobalSection
+EndGlobal

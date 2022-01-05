@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Capella.LandelijkeTabellen.Landentabel</RootNamespace>
+    <AssemblyName>Capella.LandelijkeTabellen.Landentabel</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Tabel34 Landentabel %28gesorteerd op code%29.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Tabel34 Landentabel (gesorteerd op code).csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+
+</Project>
