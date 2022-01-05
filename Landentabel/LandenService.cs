@@ -13,22 +13,47 @@ namespace Capella.LandelijkeTabellen.Landentabel
 
         protected static List<Land> Landen = _landen ?? (_landen = LoadAlleLanden());
 
-        public List<Land> GetLandenMetHistorie()
-        {
-            return Landen;
-        }
-
-        public List<Land> GetLanden()
-        {
-            return GetLanden(DateTime.Today);
-        }
-
-        public List<Land> GetLanden(DateTime forDate)
+        public List<Land> GetAllWithHistory(bool includeUnknown = true)
         {
             return Landen
-                .Where(x => (x.DatumIngang ?? DateTime.MinValue) <= forDate
-                    && (x.DatumEinde ?? DateTime.MaxValue) >= forDate)
+                .Where(x => includeUnknown || x.LandCode != "0000")
                 .ToList();
+        }
+
+        public virtual List<Land> GetAllAsList(bool includeUnknown = true)
+        {
+            return GetAllAsList(DateTime.Today, includeUnknown);
+        }
+
+        public List<Land> GetAllAsList(DateTime forDate, bool includeUnknown = true)
+        {
+            return GetLandenInternal(forDate, includeUnknown).ToList();
+        }
+
+        public Dictionary<string, string> GetAllAsDictionary(DateTime forDate, bool includeUnknown = true)
+        {
+            return GetLandenInternal(forDate, includeUnknown)
+                .ToDictionary(x => x.LandCode, x => x.Omschrijving);
+        }
+
+        public Land GetByCode(int landCode)
+        {
+            if (landCode < 0 || landCode > 9999) throw new ArgumentOutOfRangeException();
+            return GetByCode(landCode.ToString("D4"));
+        }
+
+        public Land GetByCode(string landCode)
+        {
+            if (string.IsNullOrEmpty(landCode)) throw new ArgumentNullException(nameof(landCode));
+            return Landen.SingleOrDefault(x => x.LandCode == landCode);
+        }
+
+        private IEnumerable<Land> GetLandenInternal(DateTime forDate, bool includeUnknown)
+        {
+            return Landen
+                .Where(x => (includeUnknown || x.LandCode != "0000") 
+                            && (x.DatumIngang ?? DateTime.MinValue) <= forDate
+                            && (x.DatumEinde ?? DateTime.MaxValue) >= forDate);
         }
 
         private static List<Land> LoadAlleLanden()
